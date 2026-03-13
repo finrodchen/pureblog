@@ -1084,9 +1084,12 @@ function get_markdown_parser(): object
     require_once __DIR__ . '/lib/Parsedown.php';
     if (is_file(__DIR__ . '/lib/ParsedownExtra.php')) {
         require_once __DIR__ . '/lib/ParsedownExtra.php';
+        require_once __DIR__ . '/lib/ParsedownPureblog.php';
     }
 
-    if (class_exists('ParsedownExtra')) {
+    if (class_exists('ParsedownPureblog')) {
+        $parsedown = new ParsedownPureblog();
+    } elseif (class_exists('ParsedownExtra')) {
         $parsedown = new ParsedownExtra();
     } else {
         $parsedown = new Parsedown();
