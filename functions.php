@@ -2,6 +2,20 @@
 
 declare(strict_types=1);
 
+// PHP 7.4 polyfills for functions added in PHP 8.0.
+if (!function_exists('str_starts_with')) {
+    function str_starts_with(string $haystack, string $needle): bool
+    {
+        return $needle === '' || strncmp($haystack, $needle, strlen($needle)) === 0;
+    }
+}
+if (!function_exists('str_contains')) {
+    function str_contains(string $haystack, string $needle): bool
+    {
+        return $needle === '' || strpos($haystack, $needle) !== false;
+    }
+}
+
 const PUREBLOG_BASE_PATH = __DIR__;
 const PUREBLOG_VERSION_FILE = PUREBLOG_BASE_PATH . '/VERSION';
 const PUREBLOG_CONFIG_PATH = PUREBLOG_BASE_PATH . '/config/config.php';
