@@ -1,0 +1,52 @@
+<?php
+return array (
+  'site_title' => 'JustNote',
+  'site_tagline' => 'by Finrod',
+  'site_description' => '',
+  'site_email' => 'me@finrod.xyz',
+  'custom_nav' => '',
+  'custom_routes' => '',
+  'head_inject_page' => '',
+  'head_inject_post' => '',
+  'footer_inject_page' => '',
+  'footer_inject_post' => '',
+  'posts_per_page' => 20,
+  'homepage_slug' => '',
+  'blog_page_slug' => '',
+  'hide_homepage_title' => true,
+  'hide_blog_page_title' => true,
+  'base_url' => 'https://pureblog.finrod.xyz/',
+  'timezone' => 'Asia/Taipei',
+  'date_format' => 'F j, Y',
+  'admin_username' => 'finrodchen',
+  'admin_password_hash' => '$2y$10$qC9iFhIxJg25ISodNoXm/OyUmPlHpmUuI121bsUZ9AwFyy8f/EWm.',
+  'cache' => 
+  array (
+    'enabled' => false,
+    'rss_ttl' => 3600,
+  ),
+  'theme' => 
+  array (
+    'color_mode' => 'auto',
+    'font_stack' => 'sans',
+    'admin_font_stack' => 'mono',
+    'admin_color_mode' => 'auto',
+    'background_color' => '#FAFAFA',
+    'text_color' => '#212121',
+    'accent_color' => '#0D47A1',
+    'border_color' => '#898EA4',
+    'accent_bg_color' => '#F5F7FF',
+    'background_color_dark' => '#212121',
+    'text_color_dark' => '#DCDCDC',
+    'accent_color_dark' => '#FFB300',
+    'border_color_dark' => '#555',
+    'accent_bg_color_dark' => '#2B2B2B',
+    'post_list_layout' => 'excerpt',
+  ),
+  'assets' => 
+  array (
+    'favicon' => '/assets/images/favicon.png',
+    'og_image' => '/assets/images/og-image.png',
+    'og_image_preferred' => 'banner',
+  ),
+);
