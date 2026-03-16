@@ -3,7 +3,11 @@ name: Build and Deploy to Cloudflare Pages
 on:
   push:
     branches:
-      - main  # 當你推送到 main 分支時觸發
+      - main
+
+env:
+  # 解決 Node.js 20 棄用警告，強制使用 Node.js 24
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -15,12 +19,11 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2' # 指定你需要的 PHP 版本
+          php-version: '8.2'
 
       - name: Run Build Script
         run: |
           php deploy.php
-          # 確保 dist 資料夾存在，如果沒有則建立（避免報錯）
           mkdir -p dist
 
       - name: Publish to Cloudflare Pages
@@ -28,5 +31,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: pureblog # 換成你在 Cloudflare Pages 上的專案名稱
-          directory: dist # 你在 deploy.php 中生成的輸出目錄
+          projectName: pureblog
+          directory: dist
